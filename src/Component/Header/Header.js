@@ -4,9 +4,9 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <nav className="bg-orange-200">
-        <div className="container flex justify-between items-center sm:px-10">
-          <img src={logo} alt={logo} />
+      <nav className="bg-orange-200 py-1">
+        <div className="container sm:flex justify-between items-center sm:px-10">
+          <img src={logo} className="mx-auto sm:mx-0" alt={logo} />
           <ul className="flex items-center justify-around">
             <li>Home</li>
             <li>Robots</li>
