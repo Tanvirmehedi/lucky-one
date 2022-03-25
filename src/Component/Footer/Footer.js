@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
-      <h1 className="bg-orange-300">Footer</h1>
+      <h1 className="bg-slate-900 text-white">Footer</h1>
     </div>
   );
 };
