@@ -2,7 +2,7 @@
 
 ### Visit RoboGen
 
-This project was Hosted with [Netlify](https://github.com/facebook/create-react-app).
+## This project was Hosted with [Netlify](https://github.com/facebook/create-react-app).
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
