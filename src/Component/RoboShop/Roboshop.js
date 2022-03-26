@@ -46,7 +46,11 @@ const Roboshop = () => {
     const randomIndex = Math.floor(Math.random() * carts.length);
     const result = carts.filter((val, index, arr) => index === randomIndex);
     setSelected(result);
-    window.confetti();
+    window.confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
   };
 
   //   Delete Single item from cart component
