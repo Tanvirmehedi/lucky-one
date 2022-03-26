@@ -6,7 +6,7 @@ import Product from "../Product/Product";
 const Roboshop = () => {
   const [products, setProducts] = useState([]);
 
-  //   cart for handel single product
+  //   Cart for handel single product
   const [carts, setCarts] = useState([]);
 
   useEffect(() => {
