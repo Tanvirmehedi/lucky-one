@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
+import SelectedCart from "../SelectedCart/SelectedCart";
 
 const Roboshop = () => {
   const [products, setProducts] = useState([]);
 
   //   Cart for handel single product
   const [carts, setCarts] = useState([]);
+
+  //   selected
+  const [selected, setSelected] = useState([]);
 
   useEffect(() => {
     fetch("roboDb.json").then((res) =>
@@ -33,7 +37,17 @@ const Roboshop = () => {
   };
 
   //   Clear Cart Components By Clicking Clear All Button
-  const clearHandler = () => setCarts([]);
+  const clearHandler = () => {
+    setCarts([]);
+    setSelected([]);
+  };
+
+  // Click One for me Button Handler
+  const selectOneForMe = () => {
+    const randomIndex = Math.floor(Math.random() * carts.length);
+    const result = carts.filter((val, index, arr) => index === randomIndex);
+    setSelected(result);
+  };
 
   //   Delete Single item from cart component
   const handelDelete = (id) => {
@@ -49,10 +63,23 @@ const Roboshop = () => {
             <h1 className="text-xl font-bold Font_ZQH">
               Cart item : {carts.length}
             </h1>
-            {carts.map((cart) => (
-              <Cart cart={cart} key={cart.id} handelDelete={handelDelete} />
+            {selected.map((select) => (
+              <SelectedCart select={select} key={select.id} />
             ))}
-            {carts.length !== 0 && <Button clearHandler={clearHandler} />}
+            {carts.map((cart) => (
+              <Cart
+                cart={cart}
+                selectOneForMe={selectOneForMe}
+                key={cart.id}
+                handelDelete={handelDelete}
+              />
+            ))}
+            {carts.length !== 0 && (
+              <Button
+                clearHandler={clearHandler}
+                selectOneForMe={selectOneForMe}
+              />
+            )}
           </div>
         </div>
 
