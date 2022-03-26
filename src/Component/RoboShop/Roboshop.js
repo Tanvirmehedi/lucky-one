@@ -3,7 +3,6 @@ import Button from "../Button/Button";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import SelectedCart from "../SelectedCart/SelectedCart";
-
 const Roboshop = () => {
   const [products, setProducts] = useState([]);
 
@@ -47,6 +46,7 @@ const Roboshop = () => {
     const randomIndex = Math.floor(Math.random() * carts.length);
     const result = carts.filter((val, index, arr) => index === randomIndex);
     setSelected(result);
+    window.confetti();
   };
 
   //   Delete Single item from cart component
